@@ -2,7 +2,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, Index } from 'typeorm';
 import { Product } from '../../products/entities/product.entity';
 import { ProductVariant } from '../../products/entities/product-variant.entity';
-import { User } from '../../users/entities/user.entity';
+import { Employee } from '../../employees/entities/employee.entity';
 import { Warehouse } from './warehouse.entity';
 
 export enum MovementType {
@@ -60,8 +60,8 @@ export class StockMovement {
     @Column('uuid', { nullable: true })
     user_id: string;
 
-    @ManyToOne(() => User, { nullable: true })
-    user: User;
+    @ManyToOne(() => Employee, { nullable: true })
+    user: Employee;
 
     @Column('text', { nullable: true })
     notes: string;

@@ -32,6 +32,9 @@ export class Tenant {
     @Index()
     subdomain: string; // misupermercado
 
+    @Column({ length: 225, nullable: true})
+    domain_complete: string; // misupermercado.auraapp.io
+
     @Column({ unique: true, length: 50 })
     schema_name: string; // tenant_uuid
 
